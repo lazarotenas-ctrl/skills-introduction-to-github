@@ -1,0 +1,23 @@
+Tengo un archivo `estructura_bd.md` que describe las tablas de mi base de datos para AS400 (DB2 for i). 
+Por favor genera los scripts SQL para crear estas tablas con la siguiente estructura:
+
+- Usa CREATE TABLE con sintaxis de DB2 for i.
+- Incluye LABEL ON COLUMN para cada columna con su nombre descriptivo.
+- Incluye COMMENT ON COLUMN para documentar cada columna según la descripción en el archivo.
+- Incluye COMMENT ON Table para documentar cada tabla según la descripción en el archivo.
+- incluye un coamentario como encabezado que indque lo siguiente:
+  a. nombre de la tabla
+  b. descripcion de la tabla
+  c. autor: Lazaro Tenas 
+  d. Fecha
+- Asegúrate de usar tipos de datos compatibles con AS400 (CHAR, DECIMAL, DATE, TIMESTAMP).
+- define nombre largo y nombre corto para cada columna ejemplo: 
+  * Nombre_columna for nomcol char(150) not null with default ' ' 
+- todas las columnas deben ser not null
+- todas las columnas deben llevar with default menos las columnas llave 
+- los nombrs cortos de columna no deben de tener mas de 6 de longitud
+- Incluye PRIMARY KEY y FOREIGN KEY cuando estén definidos en la descripción.
+- Genera un miembro separado para cada tabla SQL separado tabla.
+- cada miembro sql para cada tabla debe crearse en la biblioteca OTENAS1 en el archivo QSQLSRC
+
+El archivo `estructura_bd.md` contiene la descripción de las tablas y columnas. Usa esa información para generar los scripts.

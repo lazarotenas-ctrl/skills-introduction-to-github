@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "versionEstructura": "1.0.0",
+    "sistemaOrigen": "IBS-IBM-i",
+    "proceso": "CONCILIACION_GLBLN",
+    "ambiente": "QA",
+    "charset": "UTF-8"
+  },
+  "ejecucion": {
+    "idEjecucion": "20260630_120000_001",
+    "fechaProceso": "2026-06-30",
+    "fechaHoraInicio": "2026-06-30T12:00:00",
+    "fechaHoraFin": "2026-06-30T12:03:42",
+    "usuario": "USRFIN01",
+    "programa": "RQCONS001",
+    "libreria": "OTENAS1",
+    "estadoEjecucion": "FINALIZADO"
+  },
+  "contexto": {
+    "banco": "01",
+    "sucursal": "001",
+    "moneda": "USD",
+    "periodo": {
+      "anio": 2026,
+      "mes": 6,
+      "fechaCorte": "2026-06-30"
+    },
+    "rangoCuentas": {
+      "desde": "11000000",
+      "hasta": "11999999"
+    }
+  },
+  "cuentas": [
+    {
+      "cuentaMayor": {
+        "codigoBanco": "01",
+        "codigoSucursal": "001",
+        "codigoMoneda": "USD",
+        "cuentaContable": "11010101",
+        "descripcionCuenta": "CAJA GENERAL",
+        "naturaleza": "DEUDORA",
+        "nivelCuenta": 4,
+        "centroCosto": "CC001"
+      },
+      "saldos": {
+        "saldoInicial": 120000.00,
+        "debitosPeriodo": 40000.00,
+        "creditosPeriodo": 35000.00,
+        "saldoFinalCalculado": 125000.00,
+        "saldoFinalFuente": 125000.50,
+        "saldoFinalConciliado": 125000.00
+      },
+      "resumenMovimientos": {
+        "cantidadMovimientos": 98,
+        "primerMovimiento": "2026-06-01T08:12:10",
+        "ultimoMovimiento": "2026-06-30T11:58:44"
+      },
+      "partidasConciliatorias": [
+        {
+          "idPartida": "PC-0001",
+          "tipo": "TRANSITO",
+          "subtipo": "DEPOSITO_NO_APLICADO",
+          "referencia": "DEP-884771",
+          "fechaPartida": "2026-06-30",
+          "monto": 500.50,
+          "signo": "DEBITO",
+          "estado": "PENDIENTE",
+          "origen": "TTRAN",
+          "observacion": "Pendiente de aplicación en mayor"
+        }
+      ],
+      "diferencias": {
+        "diferenciaNeta": 0.50,
+        "diferenciaAbsoluta": 0.50,
+        "toleranciaPermitida": 1.00,
+        "excedeTolerancia": false,
+        "motivoPrincipal": "Partida en tránsito"
+      },
+      "estadoConciliacion": {
+        "codigo": "PARCIAL",
+        "descripcion": "Conciliada con partidas pendientes",
+        "severidad": "MEDIA",
+        "requiereRevision": true
+      },
+      "trazabilidad": {
+        "hashCuenta": "a734f9f5cbbf6b5d9f5d7a60b",
+        "registrosFuente": {
+          "glbln": 1,
+          "trans": 98,
+          "trdsc": 7,
+          "ttran": 10
+        }
+      }
+    },
+    {
+      "cuentaMayor": {
+        "codigoBanco": "01",
+        "codigoSucursal": "001",
+        "codigoMoneda": "USD",
+        "cuentaContable": "11020102",
+        "descripcionCuenta": "CUENTAS POR COBRAR",
+        "naturaleza": "DEUDORA",
+        "nivelCuenta": 4,
+        "centroCosto": "CC002"
+      },
+      "saldos": {
+        "saldoInicial": 80000.00,
+        "debitosPeriodo": 15000.00,
+        "creditosPeriodo": 12000.00,
+        "saldoFinalCalculado": 83000.00,
+        "saldoFinalFuente": 83000.00,
+        "saldoFinalConciliado": 83000.00
+      },
+      "resumenMovimientos": {
+        "cantidadMovimientos": 42,
+        "primerMovimiento": "2026-06-03T09:10:20",
+        "ultimoMovimiento": "2026-06-30T10:45:00"
+      },
+      "partidasConciliatorias": [],
+      "diferencias": {
+        "diferenciaNeta": 0.00,
+        "diferenciaAbsoluta": 0.00,
+        "toleranciaPermitida": 1.00,
+        "excedeTolerancia": false,
+        "motivoPrincipal": "Sin diferencias"
+      },
+      "estadoConciliacion": {
+        "codigo": "CONCILIADA",
+        "descripcion": "Conciliada sin observaciones",
+        "severidad": "BAJA",
+        "requiereRevision": false
+      },
+      "trazabilidad": {
+        "hashCuenta": "b5124a2c9ff12b6c8d8f9f1aa",
+        "registrosFuente": {
+          "glbln": 1,
+          "trans": 42,
+          "trdsc": 3,
+          "ttran": 6
+        }
+      }
+    }
+  ],
+  "controlTotales": {
+    "totalCuentasProcesadas": 2,
+    "totalCuentasConciliadas": 1,
+    "totalCuentasConDiferencia": 1,
+    "sumatoriaSaldoFinalFuente": 208000.50,
+    "sumatoriaSaldoFinalConciliado": 208000.00,
+    "sumatoriaDiferenciaNeta": 0.50
+  },
+  "incidentes": [
+    {
+      "codigo": "WARN-GL-002",
+      "tipo": "VALIDACION",
+      "cuentaContable": "11010101",
+      "mensaje": "Diferencia menor dentro de tolerancia",
+      "severidad": "BAJA"
+    }
+  ]
+}
